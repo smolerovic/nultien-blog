@@ -1,0 +1,39 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.error_section {
+    width: 100%;
+    min-height: 100vh;
+    background: $gray;
+
+    .error_section__item {
+        width: 100%;
+        padding-top: 5rem;
+        text-align: center;
+        h1 {
+            font-size: 50px;
+        }
+        &__btn {
+            background: darken($gray, 25%);
+            padding: 15px;
+            color: $white;
+            &:hover {
+                background: darken($gray, 15%);
+                color: $white;
+            }
+        }
+    }
+
+    .error_section__image {
+        width: 30%;
+        bottom: 0px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        @include mediaMobileMaxWidth($mobile - 1) {
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import '~antd/dist/antd.css';
+@import 'mixins';
+@import 'variables';
+
+body {
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+}
+
+.wrapper_parent { 
+  display: grid;
+  @include mediaMobileMinWidth($tablet) {
+    height: 100%;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: 170px 1fr;
+  grid-template-areas:
+  ". page-info"
+  "sidebar main-content";
+  gap: 1.5rem 2rem;
+  padding-right: 2rem;
+  padding-left: 0rem;
+  height: 100%;
+
+  @include mediaMobileMaxWidth($tablet - 1) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "page-info"
+    "sidebar"
+    "main-content";
+  }
+}
+  

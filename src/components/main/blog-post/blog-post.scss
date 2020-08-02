@@ -1,0 +1,92 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.blog_post_cmpt:not(:empty) {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 0px 5px 0 rgba(34, 36, 38, 0.2);
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.15s;
+    &:nth-child(even) {
+        background: #f0f0f0;
+    }
+    &:nth-child(odd) {
+        background: #d8d6d6;
+    }
+    p {
+        word-break: break-word;
+    }
+
+    .blog_post_cmpt__item {
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        .blog_post_cmpt__item_header {
+            display: flex;
+            .blog_post_cmpt__item_img {
+                width: 80px;
+                height: auto;
+            }
+            .blog_post_cmpt__item_hgroup {
+                margin-left: 0.5rem;
+                h2 {
+                    margin-bottom: 0px;
+                }
+                h5 {
+                    letter-spacing: -0.2px;
+                }
+            }
+        }
+        .blog_post_cmpt__item_buttons {
+            margin-left: auto;
+            button {
+                &:first-child {
+                    margin-right: 0.5rem;
+                }
+            }
+            @include mediaMobileMaxWidth($mobile - 1) {
+                flex: 0 0 100%;
+                button {
+                    width: 100%;
+                    &:first-child {
+                        margin: 0.5rem 0rem 0.3rem 0rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .blog_post_cmpt__images {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 100px;
+            height: auto;
+            &:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+        }
+        @include mediaMobileMaxWidth($mobile - 1) {
+            flex-direction: column;
+            align-items: center;
+            img {
+                &:not(:last-child) {
+                    margin-right: 0rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

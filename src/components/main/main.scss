@@ -1,0 +1,28 @@
+@mixin noBlogPostMessage {
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d8d6d6;
+    flex-direction: column;
+    text-align: center;
+    padding: 0rem 1rem;
+    @content
+}
+
+.main_content {
+    grid-area: main-content;
+}
+
+.no_search_result {
+    @include noBlogPostMessage {
+        p:first-child {
+            margin-bottom: 0.2rem;
+        }
+    }
+}
+
+.no_blog_post_message {
+    @include noBlogPostMessage;
+}
+

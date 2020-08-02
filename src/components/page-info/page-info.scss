@@ -1,0 +1,22 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.page_info {
+    grid-area: page-info;
+    margin-top: 1.5rem;
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+    .page_info__alert {
+        margin-bottom: 1rem;
+    }
+    .page_info__blog_post_modal {
+        text-align: right;
+        button {
+            min-width: 150px;
+            @include mediaMobileMaxWidth($mobile - 1) {
+                width: 100%;
+            }
+        }
+    }
+}

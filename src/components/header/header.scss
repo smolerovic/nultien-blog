@@ -1,0 +1,123 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header_cmpt {
+    position: relative;
+    background: $black;
+    padding: 0rem 1rem;
+    z-index: 9;
+    box-shadow: 0 3px 2px 1px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include mediaMobileMinWidth($mobile) {
+        padding: 0rem 2rem;
+    }
+
+    .header_cmpt__logo {
+        margin-right: 1rem;
+        img {
+            width: 100px;
+            height: auto;
+        }
+        @include mediaMobileMaxWidth(420px) {
+            margin-right: 1rem;
+            img {
+                width: 80px;
+            }
+        }
+    }
+
+    .header_cmpt__search {
+        margin-left: auto;
+        margin-right: 1rem;
+        .ant-row {
+            margin-bottom: 0px;
+            .header_cmpt__search_input {
+                max-width: 200px;
+            }
+        }
+        @include mediaMobileMaxWidth(420px) {
+            margin-right: 0.5rem;
+            .ant-row {
+                .header_cmpt__search_input {
+                    max-width: 140px;
+                }
+            }
+        }
+    }
+
+    .header_cmpt__nav {
+        ul {
+            margin: 0px;
+            text-align: center;
+            padding: 2rem 0rem;
+            li {
+                color: $white;
+                list-style: none;
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+                a {
+                    color: $white;
+                    &:hover {
+                        color: darken($color: $white, $amount: 20%);
+                    }
+                }
+            }
+        }
+        &.open {
+            display: none;
+        }
+        @include mediaMobileMaxWidth($tablet - 1) {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        @include mediaMobileMinWidth($tablet) {
+            ul {
+                display: flex;
+                padding: 0rem;
+                li {
+                    &:not(:last-child) {
+                        margin-right: 1rem;
+                        margin-bottom: 0rem;
+                    }
+                }
+            }
+            &.open {
+                display: block;
+            }
+        }
+    }
+}
+
+@include mediaMobileMaxWidth($tablet - 1) {
+    .header_cmpt__hamburger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        &_item {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 24px;
+            background: white;
+            border-radius: 9px;
+            opacity: 1;
+            left: 7px;
+            &:first-child {
+                top: 10px;
+            }
+            &:nth-child(2) {
+                top: 18px;
+            }
+            &:nth-child(3) {
+                top: 26px;
+            }
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard", "standard-react", "react-app"],
+  "rules": {
+    "indent": ["error", 2, { "VariableDeclarator": "first" }],
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "space-before-function-paren": ["error", "always"],
+    "no-unused-vars": "error",
+    "no-console": "off",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": "error",
+    "react/prop-types": "off",
+    "camelcase": "off",
+    "react/no-unescaped-entities": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

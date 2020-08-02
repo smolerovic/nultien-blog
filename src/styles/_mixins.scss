@@ -1,0 +1,14 @@
+@import 'variables';
+
+@mixin mediaMobileMaxWidth($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin mediaMobileMinWidth($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+

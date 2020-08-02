@@ -1,0 +1,43 @@
+@import '../../styles/mixins';
+
+.sidebar {
+    z-index: 1;
+    background-color: #ececec;
+    padding: 0.5rem 0rem;
+    grid-area: sidebar;
+
+    .sidebar__item {
+        > h3 {
+            text-align: center;
+        }
+        .sidebar__item_categories {
+            display: flex;
+            flex-wrap: wrap;
+            .activate {
+                background: rgba(73,144,226,0.1);
+                color: #4A90E2;
+                border-left: 5px solid #4A90E2;
+                & svg {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    @include mediaMobileMinWidth($tablet) {
+        margin: 0rem;
+        padding: 1.5rem 0rem;
+
+        .sidebar__item {
+            position: sticky;
+            top: 15px;
+            > h3 {
+                padding: 0.3rem 0px 0.3rem 1rem;
+                text-align: left;
+            }
+            .sidebar__item_categories {
+                display: block;
+            }
+        }
+    }
+}
