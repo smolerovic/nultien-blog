@@ -1,9 +1,9 @@
 
 First step is to set .env file in app root with current values:
 
-SKIP_PREFLIGHT_CHECK=true
-HTTPS=true
-PORT=3443
+SKIP_PREFLIGHT_CHECK=true<br />
+HTTPS=true<br />
+PORT=3443<br />
 NODE_ENV=development
 
 ## Available Scripts
